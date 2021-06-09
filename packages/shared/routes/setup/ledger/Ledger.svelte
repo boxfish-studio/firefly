@@ -33,7 +33,7 @@
     let migrationSteps = [
         {
             title: locale('views.setupLedger.progress1'),
-            state: [State.TrinityImport, State.InstallLedgerApp],
+            state: [State.InstallLedgerApp],
         },
         {
             title: locale('views.setupLedger.progress2'),
