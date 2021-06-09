@@ -201,7 +201,7 @@
                 {locale('actions.continue')}
             </Button>
         </div>
-        <div slot="rightpane" class="w-full h-full flex flex-col justify-center bg-pastel-yellow dark:bg-gray-900">
+        <div slot="rightpane" class="w-full h-full flex justify-center bg-pastel-yellow dark:bg-gray-900">
             <Animation animation="balance-desktop" />
         </div>
     </OnboardingLayout>
