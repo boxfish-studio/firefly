@@ -32,23 +32,24 @@
     let steps = [
         {
             title: 'Install ledger app',
-            completed: true,
+            complete: true,
         },
         {
             title: 'Generate address',
-            completed: true,
+            complete: true,
         },
         {
             title: 'Switch ledger app',
-            completed: true,
+            complete: true,
         },
         {
             title: 'Transfer funds',
-            completed: false,
+            complete: false,
+            current: true,
         },
         {
             title: 'Secure wallet',
-            completed: false,
+            complete: false,
         },
     ]
 
@@ -196,7 +197,7 @@
 {#if mobile}
     <div>not yet implemented</div>
 {:else}
-    <OnboardingLayout onBackClick={handleBackClick}>
+    <OnboardingLayout onBackClick={handleBackClick} {steps}>
         <div slot="leftpane__content">
             <Text type="h2" classes="mb-3.5">{locale('views.balance.title')}</Text>
             <Text type="p" secondary classes="mb-5">{locale('views.balance.body')}</Text>
@@ -226,7 +227,6 @@
         </div>
         <div slot="rightpane" class="w-full h-full flex flex-col justify-center bg-pastel-yellow dark:bg-gray-900">
             <Animation animation="balance-desktop" />
-            <ProgressFlow {steps} classes="justify-center" />
         </div>
     </OnboardingLayout>
 {/if}
