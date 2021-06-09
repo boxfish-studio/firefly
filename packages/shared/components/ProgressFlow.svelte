@@ -20,14 +20,35 @@
         @apply text-white;
         @apply bg-blue-500;
     }
+    .circle-container {
+        &:not(.last) {
+            &::after {
+                content: '';
+                @apply absolute;
+                @apply left-1/2;
+                @apply bg-gray-300;
+                z-index: -1;
+                @apply w-full;
+                @apply h-0.5;
+            }
+            &.completed-section {
+                &::after {
+                    @apply bg-blue-500;
+                }
+            }
+        }
+    }
 </style>
 
 <div class={`flex flex-row items-center ${classes}`}>
     {#each steps as { title, current, complete }, index}
-        <div class="flex flex-col items-center justify-around w-full">
-            <div class={`flex items-center justify-center ${current ? 'w-7 h-7' : 'w-6 h-6'}`}>
+        <div class="relative flex flex-col items-center justify-around w-full">
+            <div
+                class={`circle-container z-0 flex items-center justify-center ${current ? 'w-7 h-7' : 'w-6 h-6'}`}
+                class:completed-section={complete}
+                class:last={index === steps.length - 1}>
                 <div
-                    class="relative w-full h-full rounded-full bg-transparent border-solid border-2 border-gray-300 dark:border-gray-700 text-gray-500 flex items-center justify-center"
+                    class="relative w-full h-full rounded-full bg-white border-solid border-2 border-gray-300 dark:border-gray-700 text-gray-500 flex items-center justify-center"
                     class:complete
                     class:current>
                     <div
