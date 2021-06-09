@@ -4,8 +4,25 @@
 </script>
 
 <style type="text/scss">
+    .circle-container {
+        &:not(.last) {
+            &::after {
+                content: '';
+                @apply absolute;
+                @apply left-1/2;
+                @apply bg-gray-300;
+                z-index: -1;
+                @apply w-full;
+                @apply h-0.5;
+            }
+            &.completed-section {
+                &::after {
+                    @apply bg-blue-500;
+                }
+            }
+        }
+    }
     .completed {
-        @apply relative;
         @apply border-0;
         @apply text-white;
         @apply bg-blue-500;
@@ -23,10 +40,13 @@
 
 <div class={`flex flex-row items-center ${classes}`}>
     {#each steps as step, index}
-        <div class="flex flex-col items-center justify-around w-full">
-            <div class="flex items-center justify-center w-8 h-8">
+        <div class="relative flex flex-col items-center justify-around w-full">
+            <div
+                class="circle-container z-0 flex items-center justify-center w-8 h-8"
+                class:completed-section={step.completed}
+                class:last={index === steps.length - 1}>
                 <div
-                    class="w-6 h-6 rounded-full bg-white border-2 border-gray-300 text-gray-500 flex items-center justify-center"
+                    class="circle w-6 h-6 rounded-full bg-white border-2 border-gray-300 text-gray-500 flex items-center justify-center"
                     class:completed={step.completed}
                     class:current-step={steps[index - 1] ? steps[index - 1].completed && !steps[index].completed : false}>
                     {#if !step.completed}{index + 1}{/if}
