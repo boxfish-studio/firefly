@@ -1,5 +1,5 @@
 <script lang="typescript">
-    import { Animation, Box, Button, OnboardingLayout, Spinner, Text, Toast } from 'shared/components'
+    import { Animation, Box, Button, OnboardingLayout, ProgressFlow, Spinner, Text, Toast } from 'shared/components'
     import {
         AvailableExchangeRates,
         convertToFiat,
@@ -28,6 +28,29 @@
     export let mobile
 
     let isCheckingForBalance
+
+    let steps = [
+        {
+            title: 'Install ledger app',
+            completed: true,
+        },
+        {
+            title: 'Generate address',
+            completed: true,
+        },
+        {
+            title: 'Switch ledger app',
+            completed: true,
+        },
+        {
+            title: 'Transfer funds',
+            completed: false,
+        },
+        {
+            title: 'Secure wallet',
+            completed: false,
+        },
+    ]
 
     const { seed, data, bundles } = $migration
 
@@ -201,8 +224,9 @@
                 {locale('actions.continue')}
             </Button>
         </div>
-        <div slot="rightpane" class="w-full h-full flex justify-center bg-pastel-yellow dark:bg-gray-900">
+        <div slot="rightpane" class="w-full h-full flex flex-col justify-center bg-pastel-yellow dark:bg-gray-900">
             <Animation animation="balance-desktop" />
+            <ProgressFlow {steps} classes="justify-center" />
         </div>
     </OnboardingLayout>
 {/if}
