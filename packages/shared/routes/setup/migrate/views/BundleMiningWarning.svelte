@@ -39,7 +39,7 @@
             <Text type="h2" classes="mb-5 text-center">{locale('views.bundleMiningWarning.title')}</Text>
             <Text type="p" secondary classes="mb-4 text-center">{locale('views.bundleMiningWarning.body1')}</Text>
             <Text type="p" secondary classes="mb-8 text-center">{locale('views.bundleMiningWarning.body2')}</Text>
-            <div class="flex flex-col flex-grow items-center">
+            <div class="flex flex-col grow items-center">
                 <Button secondary classes="w-56" onClick={() => Electron.openUrl('https://firefly.iota.org/faq#spent-addresses')}>
                     {locale('views.bundleMiningWarning.learn')}
                 </Button>

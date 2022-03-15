@@ -41,7 +41,7 @@
 </style>
 
 <div class="w-full h-full flex flex-col justify-between {!$currentAccount ? 'p-8' : ''}">
-    <div class="w-full h-full space-y-6 flex flex-auto flex-col flex-shrink-0">
+    <div class="w-full h-full space-y-6 flex flex-auto flex-col shrink-0">
         {#if !$currentAccount}
             <div>
                 <div class="w-full flex flex-row justify-between items-start">

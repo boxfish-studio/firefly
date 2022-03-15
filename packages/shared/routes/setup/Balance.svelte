@@ -214,7 +214,7 @@
         <div slot="leftpane__content">
             <Text type="h2" classes="mb-3.5">{locale('views.balance.title')}</Text>
             <Text type="p" secondary classes="mb-5">{locale('views.balance.body')}</Text>
-            <Box classes="flex flex-col flex-grow items-center py-12 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-50 rounded-lg ">
+            <Box classes="flex flex-col grow items-center py-12 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-50 rounded-lg ">
                 <Text type="h2">{formattedBalance}</Text>
                 <Text type="p" highlighted classes="py-1 uppercase">{fiatBalance}</Text>
             </Box>

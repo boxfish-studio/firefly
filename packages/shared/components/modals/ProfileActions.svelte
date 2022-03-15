@@ -29,7 +29,7 @@
 <Modal bind:isActive position={{ bottom: '16px', left: '80px' }}>
     <profile-modal-content class="flex flex-col" in:fade={{ duration: 100 }}>
         <div class="flex flex-row flex-nowrap items-center space-x-3 p-3">
-            <div class="w-8 h-8 flex items-center justify-center flex-shrink-0 rounded-full bg-{profileColor}-500">
+            <div class="w-8 h-8 flex items-center justify-center shrink-0 rounded-full bg-{profileColor}-500">
                 <span class="text-12 leading-100 text-center text-white uppercase">{profileInitial}</span>
             </div>
             <Text>{profileName}</Text>

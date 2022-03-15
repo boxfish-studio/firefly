@@ -48,7 +48,7 @@
 <div class="{classes} flex flex-row items-center bg-{TOAST_STYLE[type].backgroundColor} rounded-lg px-6 py-4">
     <div
         style={'width:40px;height:40px'}
-        class="flex flex-shrink-0 justify-center items-center bg-{TOAST_STYLE[type].iconBackgroundColor} rounded-lg text-{TOAST_STYLE[type].iconColor}">
+        class="flex shrink-0 justify-center items-center bg-{TOAST_STYLE[type].iconBackgroundColor} rounded-lg text-{TOAST_STYLE[type].iconColor}">
         {#if TOAST_STYLE[type].logo}
             <Logo logo={TOAST_STYLE[type].logo} />
         {:else}

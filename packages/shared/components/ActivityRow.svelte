@@ -141,7 +141,7 @@
         {/if}
     </div>
     <div class="flex flex-col ml-3.5 space-y-1.5 overflow-hidden">
-        <Text type="p" bold smaller classes="overflow-hidden overflow-ellipsis multiwrap-line2">
+        <Text type="p" bold smaller classes="overflow-hidden text-ellipsis multiwrap-line2">
             {hasCachedMigrationTx || milestonePayload ? locale('general.fundMigration') : locale(direction, {
                       values: { account: accountAlias },
                   })}

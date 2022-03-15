@@ -142,7 +142,7 @@
                             class="flex flex-row items-center justify-between py-4 px-3 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:bg-opacity-20">
                             <div class="flex flex-row items-center overflow-hidden">
                                 <Text
-                                    classes={`overflow-hidden whitespace-nowrap overflow-ellipsis ${node.disabled ? 'opacity-50' : ''}`}>
+                                    classes={`overflow-hidden whitespace-nowrap text-ellipsis ${node.disabled ? 'opacity-50' : ''}`}>
                                     {node.url}
                                 </Text>
                                 <Text highlighted classes="mx-4">

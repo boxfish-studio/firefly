@@ -37,7 +37,7 @@
         <AccountNavigation {locale} accounts={navAccounts} />
         {#key $account}
             <div class="w-full h-full grid grid-cols-3 gap-x-4 min-h-0">
-                <DashboardPane classes=" h-full flex flex-auto flex-col flex-shrink-0">
+                <DashboardPane classes=" h-full flex flex-auto flex-col shrink-0">
                     <AccountBalance
                         {locale}
                         color={$account.color}

@@ -44,7 +44,6 @@
                     <slot name="leftpane__content" />
                 </div>
             </div>
-            <div class="p-4 bg-yellow-900">holaaa</div>
             <div data-label="leftpane-action" class="mt-6">
                 <slot name="leftpane__action" />
             </div>

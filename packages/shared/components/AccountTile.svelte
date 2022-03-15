@@ -37,7 +37,7 @@
             bold
             smaller={size === 's'}
             overrideColor
-            classes="text-gray-800 dark:text-white group-hover:text-white overflow-hidden overflow-ellipsis">
+            classes="text-gray-800 dark:text-white group-hover:text-white overflow-hidden text-ellipsis">
             {name}
         </Text>
         {#if ledger}

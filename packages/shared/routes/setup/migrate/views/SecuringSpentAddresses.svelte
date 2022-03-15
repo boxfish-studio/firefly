@@ -120,7 +120,7 @@
                 {locale('views.securingSpentAddresses.body1', { values: { minutes: $selectedBundlesToMine.length * 10 } })}
             </Text>
             <Text type="p" secondary classes="mb-8 text-center">{locale('views.securingSpentAddresses.body2')}</Text>
-            <div class="flex flex-col flex-grow items-center">
+            <div class="flex flex-col grow items-center">
                 <Button secondary classes="w-56" onClick={() => Electron.openUrl('https://firefly.iota.org/faq#spent-addresses')}>
                     {locale('views.bundleMiningWarning.learn')}
                 </Button>

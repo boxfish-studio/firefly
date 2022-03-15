@@ -1,5 +1,27 @@
+const colors = require('tailwindcss/colors')
 const plugin = require('tailwindcss/plugin')
 const selectorParser = require('postcss-selector-parser')
+
+const PRODUCTION_SAFELIST = [
+    // gradients: from-{color} to-{color}
+    { pattern: /^from-/ },
+    { pattern: /^to-/ },
+    // backgrounds: bg-{color}
+    { pattern: /^bg-/ },
+    { pattern: /^hover:bg-/ },
+    { pattern: /^dark:bg-/ },
+    // text colors: text-{color}
+    { pattern: /^text-/ },
+    { pattern: /^hover:text-/ },
+    { pattern: /^dark:text-/ },
+]
+
+const DEVELOPMENT_SAFELIST = [
+    {
+        pattern: /./,
+    },
+]
+const safelist = process.env.NODE_ENV === 'production' ? PRODUCTION_SAFELIST : DEVELOPMENT_SAFELIST
 
 /* Utilities */
 const pxToRem = (px, base = 16) => `${px / base}rem`
@@ -8,21 +30,10 @@ module.exports = {
     mode: 'jit',
     content: ['../shared/**/*.svelte', '../shared/**/*.scss'],
     // Needed to prevent purgecss from removing classes declared with string concatenation
-    safelist: [
-        // gradients: from-{color} to-{color}
-        /^from-/,
-        /^to-/,
-        // backgrounds: bg-{color}
-        /^bg-/,
-        /^hover:bg-/,
-        /^dark:bg-/,
-        // text colors: text-{color}
-        /^text-/,
-        /^hover:text-/,
-        /^dark:text-/,
-    ],
+    safelist: safelist,
     theme: {
         colors: {
+            current: 'currentColor',
             blue: {
                 50: '#F2F9FF',
                 100: '#D9EDFF',
@@ -156,6 +167,12 @@ module.exports = {
             },
         },
         extend: {
+            colors: {
+                green: colors.emerald,
+                yellow: colors.amber,
+                purple: colors.violet,
+                gray: colors.neutral,
+            },
             fontSize: {
                 10: pxToRem(10),
                 11: pxToRem(11),
