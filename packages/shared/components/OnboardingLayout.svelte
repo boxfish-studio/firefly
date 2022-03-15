@@ -14,7 +14,10 @@
     export let onBackClick = (): void => {}
 
     function handleWatchVideoClick() {
-        openPopup({ type: 'video', props: { video: LEDGER_MIGRATION_VIDEO, title: locale('views.setupLedger.videoGuide') } })
+        openPopup({
+            type: 'video',
+            props: { video: LEDGER_MIGRATION_VIDEO, title: locale('views.setupLedger.videoGuide') },
+        })
     }
 </script>
 
@@ -41,6 +44,7 @@
                     <slot name="leftpane__content" />
                 </div>
             </div>
+            <div class="p-4 bg-yellow-900">holaaa</div>
             <div data-label="leftpane-action" class="mt-6">
                 <slot name="leftpane__action" />
             </div>
@@ -49,7 +53,7 @@
     <div data-label="rightpane" style={'width: 62%;'} class="relative bg-gray-100 dark:bg-gray-900">
         <slot name="rightpane" />
         {#if showLedgerProgress}
-            <div class="absolute transform bottom-8 left-1/2 -translate-x-1/2 w-full px-20">
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 w-full px-20">
                 <ProgressFlow progress={$ledgerMigrationProgresses} />
             </div>
         {/if}

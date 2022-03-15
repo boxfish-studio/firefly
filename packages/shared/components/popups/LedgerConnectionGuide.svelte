@@ -7,7 +7,12 @@
     export let locale: Locale
 
     let stepIndex = 0
-    const stepAnimations = ['ledger-background-live-desktop', 'ledger-pin-desktop', 'ledger-open-app-desktop', 'ledger-support']
+    const stepAnimations = [
+        'ledger-background-live-desktop',
+        'ledger-pin-desktop',
+        'ledger-open-app-desktop',
+        'ledger-support',
+    ]
 
     function changeIndex(increment) {
         stepIndex += increment
@@ -37,7 +42,7 @@
 <Text type="h4" classes="mb-6">{locale('popups.ledgerConnectionGuide.title')}</Text>
 <div class="w-full flex flex-row flex-wrap relative z-0">
     <div class="illustration-wrapper relative w-full bg-white dark:bg-gray-900 flex justify-center items-center z-0">
-        <div class="animation absolute transform top-2.5 left-1/2 -translate-x-1/2 z-0">
+        <div class="animation absolute top-2.5 left-1/2 -translate-x-1/2 z-0">
             <Animation animation="ledger-bg-desktop" />
         </div>
         <Illustration illustration={stepAnimations[stepIndex]} />
@@ -46,7 +51,9 @@
         {#if typeof locale(`popups.ledgerConnectionGuide.steps.${stepIndex}`) === 'string'}
             <Text secondary classes="inline-block">{locale(`popups.ledgerConnectionGuide.steps.${stepIndex}`)}</Text>
         {:else}
-            <Text secondary classes="inline-block">{locale(`popups.ledgerConnectionGuide.steps.${stepIndex}.text`)}</Text>
+            <Text secondary classes="inline-block">
+                {locale(`popups.ledgerConnectionGuide.steps.${stepIndex}.text`)}
+            </Text>
             <Link
                 classes="ml-0.5 inline-block text-13 leading-160"
                 onClick={() => Electron.openUrl('https://support.ledger.com/hc/en-us/articles/360019868977-Fix-USB-connection-issues-with-Ledger-Live?support=true')}>

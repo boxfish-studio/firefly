@@ -43,7 +43,7 @@
 <Text type="h4" classes="mb-6">{locale('popups.ledgerAppGuide.title')}</Text>
 <div class="w-full flex flex-row flex-wrap">
     <div class="illustration-wrapper relative w-full bg-white dark:bg-gray-900 flex justify-center items-center">
-        <div class="animation absolute transform top-2 left-1/2 -translate-x-1/2 z-0">
+        <div class="animation absolute top-2 left-1/2 -translate-x-1/2 z-0">
             <Animation animation="ledger-bg-desktop" />
         </div>
         <Illustration illustration={stepAnimations[stepIndex]} />

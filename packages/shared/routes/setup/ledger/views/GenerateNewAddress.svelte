@@ -26,8 +26,8 @@
     $: animation = !newAddress
         ? 'ledger-generate-address-desktop'
         : confirmed
-            ? 'ledger-address-confirmed-desktop'
-            : 'ledger-confirm-address-desktop'
+        ? 'ledger-address-confirmed-desktop'
+        : 'ledger-confirm-address-desktop'
 
     function generateNewAddress() {
         newAddress = null
@@ -69,7 +69,8 @@
                 onSuccess(getAccountsResponse) {
                     if (getAccountsResponse.payload.length > 0) {
                         if (getAccountsResponse.payload[$activeProfile.ledgerMigrationCount]) {
-                            newAddress = getAccountsResponse.payload[$activeProfile.ledgerMigrationCount].addresses[0].address
+                            newAddress =
+                                getAccountsResponse.payload[$activeProfile.ledgerMigrationCount].addresses[0].address
                             displayAddress()
                         } else {
                             _createAccount($activeProfile.ledgerMigrationCount + 1)
@@ -149,7 +150,9 @@
         </div>
         <div slot="leftpane__action" class="flex flex-col space-y-4">
             {#if newAddress}
-                <Button classes="w-full" disabled={!confirmed} onClick={handleContinueClick}>{locale('actions.continue')}</Button>
+                <Button classes="w-full" disabled={!confirmed} onClick={handleContinueClick}>
+                    {locale('actions.continue')}
+                </Button>
             {:else}
                 <Button classes="w-full" disabled={busy} onClick={generateNewAddress}>
                     {#if busy}
@@ -165,7 +168,7 @@
             <Animation
                 width="100%"
                 animation="ledger-bg-desktop"
-                classes="absolute transform left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+                classes="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
             <Animation width="100%" {animation} />
         </div>
     </OnboardingLayout>

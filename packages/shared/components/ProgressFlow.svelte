@@ -76,7 +76,7 @@
                     class:complete
                     class:ongoing>
                     <div
-                        class="w-full h-full z-10 absolute transform left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
+                        class="w-full h-full z-10 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
                         {#if complete}
                             <Icon width="20" height="20" icon="success-check" classes="text-white" />
                         {:else}

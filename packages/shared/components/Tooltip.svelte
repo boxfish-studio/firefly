@@ -39,7 +39,6 @@
             @apply border-white;
             @apply border-l-transparent;
             @apply border-r-transparent;
-            @apply transform;
             @apply -translate-x-1/2;
             @apply -bottom-2;
             @apply left-1/2;

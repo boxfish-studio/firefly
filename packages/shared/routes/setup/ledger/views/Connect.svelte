@@ -39,8 +39,8 @@
     $: animation = !isConnected
         ? 'ledger-disconnected-desktop'
         : isAppOpen
-            ? 'ledger-connected-desktop'
-            : 'ledger-app-closed-desktop'
+        ? 'ledger-connected-desktop'
+        : 'ledger-app-closed-desktop'
 
     const dispatch = createEventDispatcher()
 
@@ -146,7 +146,7 @@
             </Link>
             <Button
                 classes="w-full"
-                disabled={polling && (!isConnected || !isAppOpen) || creatingAccount}
+                disabled={(polling && (!isConnected || !isAppOpen)) || creatingAccount}
                 onClick={handleContinueClick}>
                 {#if creatingAccount}
                     <Spinner busy message={locale('general.creatingAccount')} classes="justify-center" />
@@ -157,7 +157,7 @@
             <Animation
                 width="100%"
                 animation="ledger-bg-desktop"
-                classes="absolute transform left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+                classes="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
             <Animation width="100%" {animation} />
         </div>
     </OnboardingLayout>

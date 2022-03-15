@@ -6,25 +6,21 @@ const pxToRem = (px, base = 16) => `${px / base}rem`
 
 module.exports = {
     mode: 'jit',
-    purge: {
-        content: ['../shared/**/*.svelte', '../shared/**/*.scss'],
-        options: {
-            // Needed to prevent purgecss from removing classes declared with string concatenation
-            safelist: [
-                // gradients: from-{color} to-{color}
-                /^from-/,
-                /^to-/,
-                // backgrounds: bg-{color}
-                /^bg-/,
-                /^hover:bg-/,
-                /^dark:bg-/,
-                // text colors: text-{color}
-                /^text-/,
-                /^hover:text-/,
-                /^dark:text-/,
-            ],
-        },
-    },
+    content: ['../shared/**/*.svelte', '../shared/**/*.scss'],
+    // Needed to prevent purgecss from removing classes declared with string concatenation
+    safelist: [
+        // gradients: from-{color} to-{color}
+        /^from-/,
+        /^to-/,
+        // backgrounds: bg-{color}
+        /^bg-/,
+        /^hover:bg-/,
+        /^dark:bg-/,
+        // text colors: text-{color}
+        /^text-/,
+        /^hover:text-/,
+        /^dark:text-/,
+    ],
     theme: {
         colors: {
             blue: {
