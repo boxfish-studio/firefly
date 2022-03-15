@@ -167,12 +167,6 @@ module.exports = {
             },
         },
         extend: {
-            colors: {
-                green: colors.emerald,
-                yellow: colors.amber,
-                purple: colors.violet,
-                gray: colors.neutral,
-            },
             fontSize: {
                 10: pxToRem(10),
                 11: pxToRem(11),
