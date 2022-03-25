@@ -25,7 +25,7 @@
     } from 'shared/routes'
     import { onMount } from 'svelte'
 
-    $: $appSettings.darkMode ? document.body.classList.add('scheme-dark') : document.body.classList.remove('scheme-dark')
+    $: $appSettings.darkMode ? document.body.classList.add('dark') : document.body.classList.remove('dark')
 
     $: if (document.dir !== $dir) {
         document.dir = $dir
@@ -54,7 +54,7 @@
     html,
     body {
         @apply bg-white;
-        &.scheme-dark {
+        &.dark {
             @apply bg-blue-900;
         }
     }
@@ -79,7 +79,7 @@
 </style>
 
 <!-- empty div to avoid auto-purge removing dark classes -->
-<div class="scheme-dark" />
+<div class="dark" />
 {#if !$isLocaleLoaded || splash}
     <Splash />
 {:else}

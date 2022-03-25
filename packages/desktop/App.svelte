@@ -38,7 +38,7 @@
     import { getLocalisedMenuItems } from './lib/helpers'
     import { Locale } from 'shared/lib/typings/i18n'
 
-    $: $appSettings.darkMode ? document.body.classList.add('scheme-dark') : document.body.classList.remove('scheme-dark')
+    $: $appSettings.darkMode ? document.body.classList.add('dark') : document.body.classList.remove('dark')
     $: {
         isLocaleLoaded.subscribe((loaded) => {
             if (loaded) {
@@ -161,7 +161,7 @@
             }
         }
 
-        &.scheme-dark {
+        &.dark {
             @apply bg-gray-900;
             :global(::-webkit-scrollbar-thumb) {
                 @apply bg-gray-700;
@@ -207,7 +207,7 @@
 
 <TitleBar>
     <!-- empty div to avoid auto-purge removing dark classes -->
-    <div class="scheme-dark" />
+    <div class="dark" />
     {#if !$isLocaleLoaded || splash}
         <Splash />
     {:else}

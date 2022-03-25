@@ -27,10 +27,10 @@ const safelist = process.env.NODE_ENV === 'production' ? PRODUCTION_SAFELIST : D
 const pxToRem = (px, base = 16) => `${px / base}rem`
 
 module.exports = {
-    mode: 'jit',
     content: ['../shared/**/*.svelte', '../shared/**/*.scss'],
     // Needed to prevent purgecss from removing classes declared with string concatenation
     safelist: safelist,
+    darkMode: 'class',
     theme: {
         colors: {
             current: 'currentColor',
@@ -281,20 +281,6 @@ module.exports = {
                 }
             })
             addUtilities(individualBorderColors)
-        }),
-        // Add darkmode
-        // Source: https://dev.to/smartmointy/tailwind-css-dark-mode-switch-with-javascript-2kl9
-        plugin(({ addVariant, prefix }) => {
-            addVariant('dark', ({ modifySelectors, separator }) => {
-                modifySelectors(({ selector }) =>
-                    selectorParser((selectors) => {
-                        selectors.walkClasses((sel) => {
-                            sel.value = `dark${separator}${sel.value}`
-                            sel.parent.insertBefore(sel, selectorParser().astSync(prefix('.scheme-dark ')))
-                        })
-                    }).processSync(selector)
-                )
-            })
         }),
     ],
 }
