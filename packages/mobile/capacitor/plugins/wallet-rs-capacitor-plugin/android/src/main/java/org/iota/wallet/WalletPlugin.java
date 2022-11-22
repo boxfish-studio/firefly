@@ -29,7 +29,7 @@ public class WalletPlugin extends Plugin {
         try {
             System.out.println("Creating wallet --->");
             Wallet wallet = new Wallet(new WalletConfig()
-                .withClientOptions(new ClientConfig().withNodes("https://api.testnet.shimmer.network")).withStoragePath("/data/data/org.iota.wallet/")
+                .withClientOptions(new ClientConfig().withNodes("https://api.testnet.shimmer.network")).withStoragePath("/data/data/org.iota.firefly.mobile/")
                 .withSecretManager(new MnemonicSecretManager("hidden enroll proud copper decide negative orient asset speed work dolphin atom unhappy game cannon scheme glow kid ring core name still twist actor"))
                 .withCoinType(CoinType.Shimmer)
             );
