@@ -6,7 +6,7 @@ import { IAppVersionDetails, IPlatform } from '@core/app'
 import { DeepLinkManager } from './lib/deepLinkManager'
 import { NotificationManager } from './lib/notificationManager'
 import { PincodeManager } from './lib/pincodeManager'
-import * as WalletBindings from './walletPluginApi'
+import { WalletBindings } from './walletPluginApi'
 
 let activeProfileId = null
 

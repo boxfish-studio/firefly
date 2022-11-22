@@ -166,3 +166,4 @@ export const WalletBindings: IApi = {
     },
 }
 
+// window.wallet.createAccount().then(r => console.log(r))
