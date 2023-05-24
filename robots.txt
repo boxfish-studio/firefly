@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iotaledger.github.io/firefly/sitemap.xml.gz
